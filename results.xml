@@ -1,0 +1,13 @@
+<testsuite name="Mocha Tests" tests="4" failures="0" errors="0" skipped="0" timestamp="Wed, 16 Sep 2015 14:25:29 GMT" time="0.046">
+<testcase classname="pluginDispatchr #register" name="should allow us to access the plugin off the hapi server" time="0"/>
+<testcase classname="pluginDispatchr #publishEmail Validation" name="should fail when the options are missing required parameters" time="0.002"/>
+<testcase classname="pluginDispatchr #publishEmail Dispatchr module successful" name="should be call dispatchr-module with the correct parameters and resolve" time="0.002"/>
+<testcase classname="pluginDispatchr #publishEmail Dispatchr module errorred" name="should pass back errors from dispatchr-module as a rejected promise" time="0"/>
+</testsuite>
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 29/29 )
+Branches     : 100% ( 8/8 )
+Functions    : 100% ( 7/7 )
+Lines        : 100% ( 29/29 )
+================================================================================

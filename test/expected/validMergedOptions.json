@@ -1,0 +1,25 @@
+{
+  "archive": false,
+  "body": {
+    "html": {
+      "location": "https://example.com"
+    },
+    "text": {
+      "location": "https://example.com"
+    }
+  },
+  "client": "WORKS",
+  "delay": 0,
+  "from": {
+    "email": "do_not_reply@holidayextras.com",
+    "name": "From Name"
+  },
+  "retries": 5,
+  "subject": "Subject",
+  "timezone": "UTC",
+  "to": {
+    "email": "customer@email.com",
+    "name": "Customer Name"
+  },
+  "type": "confirmation"
+}
