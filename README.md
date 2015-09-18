@@ -27,7 +27,7 @@ server.pack.register( [
 
 This sends a request down to the dispatchr-module's publish function, which publishes a request to the Dispatchr email queue. 
 
-The Disapcthr service runs as a separate service and will pick up the request when ready to send an email.
+The Dispatchr service runs as a separate service and will pick up the request when ready to send an email.
 
 Example usage:
 
