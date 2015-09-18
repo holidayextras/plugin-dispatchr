@@ -1,0 +1,7 @@
+{
+ "client": "WORKS",
+ "timezone": "UTC",
+ "archive": false,
+ "retries": 5,
+ "delay": 0
+}

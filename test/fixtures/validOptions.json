@@ -1,0 +1,20 @@
+{
+  "type": "confirmation",
+  "subject": "Subject",
+  "to": {
+    "name": "Customer Name",
+    "email": "customer@email.com"
+  },
+  "from": {
+    "name": "From Name",
+    "email": "do_not_reply@holidayextras.com"
+  },
+  "body": {
+    "html": {
+      "location": "https://example.com"
+    },
+    "text": {
+      "location": "https://example.com"
+    }
+  }
+}

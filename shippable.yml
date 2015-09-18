@@ -15,8 +15,7 @@ before_script:
 # Running the tests with npm
 script:
   - node_modules/.bin/make-up lib test
-  - istanbul cover _mocha -- --recursive -R xunit > shippable/testresults/results.xml
-  - istanbul report cobertura --dir  shippable/codecoverage/
+  - istanbul cover _mocha -- --recursive -R xunit
 
 # Setup our environment with the IAM credentials
 # we're using IAM user "shippable"

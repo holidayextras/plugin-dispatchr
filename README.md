@@ -23,9 +23,44 @@ server.pack.register( [
 } );
 ```
 
-#### Function: makeItSo
+#### Function: publishEmail
 
-To be written....
+This sends a request down to the dispatchr-module's publish function, which publishes a request to the Dispatchr email queue. 
+
+The Dispatchr service runs as a separate service and will pick up the request when ready to send an email.
+
+Example usage:
+
+```
+var options = {
+	type: 'confirmation',
+	subject: 'Booking Confirmation - MR TEST - 5ABCDEF',
+	to: {
+		name: 'Customer Name',
+		email: 'customer@name.com'
+	},
+	from: {
+		name: 'Paultons Breaks',
+		email: 'do_not_reply@holidayextras.com'
+	},
+	body: {
+		html: {
+			location: 'https://example.com/confirmation.html'
+		},
+		text: {
+			location: 'https://example.com/confirmation.txt'
+		}
+	},
+	bcc: [
+		{
+			name: 'HX Vouchers',
+			email: 'vouchers2@holidayextras.com'
+		}
+	]
+};
+return request.server.plugins['plugin-dispatchr'].publishEmail( options );
+
+```
 
 ## Contributing
 
