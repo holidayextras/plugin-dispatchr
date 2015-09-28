@@ -17,11 +17,12 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "test": "node_modules/.bin/make-up lib test && istanbul cover _mocha -- --recursive test/ -R spec"
+    "test": "node_modules/deployment-helpers/nodeApps/preRelease.sh && node_modules/.bin/make-up lib test && istanbul cover _mocha -- --recursive test/ -R spec"
   },
   "devDependencies": {
     "chai": "1.9.1",
     "chai-as-promised": "4.3.0",
+    "deployment-helpers": "git+ssh://git@github.com:holidayextras/deployment-helpers.git",
     "hapi": "6.0.2",
     "istanbul": "0.3.7",
     "make-up": "5.3.1",
