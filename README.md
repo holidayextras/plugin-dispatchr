@@ -1,6 +1,6 @@
 # plugin-dispatchr
 
-[![Build Status](https://api.shippable.com/projects/55f495c61895ca447414ddec/badge?branchName=master)](https://app.shippable.com/projects/55f495c61895ca447414ddec/builds/latest)
+[![Circle CI](https://circleci.com/gh/holidayextras/plugin-dispatchr/tree/master.svg?style=svg&circle-token=4846db9d7b85bf5117c58f793183d639f8cc802b)](https://circleci.com/gh/holidayextras/plugin-dispatchr)
 
 ## About
 
