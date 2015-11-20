@@ -2,9 +2,8 @@
 'use strict';
 
 var chai = require( 'chai' );
-var chaiAsPromised = require( 'chai-as-promised' );
-chai.use( chaiAsPromised );
-chai.should();
+chai.use( require( 'chai-as-promised' ) );
+var expect = chai.expect;
 var sinon = require( 'sinon' );
 var _ = require( 'lodash' );
 
@@ -32,7 +31,7 @@ describe( 'pluginDispatchr', function() {
 
   describe( '#register', function() {
     it( 'should allow us to access the plugin off the hapi server', function( done ) {
-      server.plugins[ 'plugin-dispatchr' ].should.not.equal( undefined );
+      expect( server.plugins[ 'plugin-dispatchr' ] ).to.not.equal( undefined );
       done();
     } );
   } );
@@ -42,7 +41,7 @@ describe( 'pluginDispatchr', function() {
     context( 'Validation', function() {
 
       it( 'should fail when the options are missing required parameters', function() {
-        return server.plugins[ 'plugin-dispatchr' ].publishEmail( {} ).should.eventually.be.rejected.and.eventually.have.property( 'error' ).that.is.an.instanceof( TypeError );
+        return expect( server.plugins[ 'plugin-dispatchr' ].publishEmail( {} ) ).to.eventually.be.rejected.and.eventually.have.property( 'error' ).that.is.an.instanceof( TypeError );
       } );
 
     } );
@@ -62,8 +61,8 @@ describe( 'pluginDispatchr', function() {
 
       it( 'should be call dispatchr-module with the correct parameters and resolve', function() {
         return server.plugins[ 'plugin-dispatchr' ].publishEmail( loadTestResource( 'fixtures/validOptions' ) ).then( function() {
-          checkType.should.equal( 'email' );
-          checkOptions.should.deep.equal( loadTestResource( 'expected/validMergedOptions' ) );
+          expect( checkType ).to.equal( 'email' );
+          expect( checkOptions ).to.deep.equal( loadTestResource( 'expected/validMergedOptions' ) );
         } );
       } );
 
@@ -84,7 +83,7 @@ describe( 'pluginDispatchr', function() {
       } );
 
       it( 'should pass back errors from dispatchr-module as a rejected promise', function() {
-        return server.plugins[ 'plugin-dispatchr' ].publishEmail( loadTestResource( 'fixtures/validOptions' ) ).should.be.rejected;
+        return expect( server.plugins[ 'plugin-dispatchr' ].publishEmail( loadTestResource( 'fixtures/validOptions' ) ) ).to.be.rejected;
       } );
 
       after( function( done ) {
