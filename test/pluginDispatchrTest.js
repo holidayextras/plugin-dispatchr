@@ -1,10 +1,11 @@
-/*eslint no-unused-expressions:0 */
 'use strict';
 
-var chai = require( 'chai' );
-chai.use( require( 'chai-as-promised' ) );
-var expect = chai.expect;
+var expect = require( 'chai' )
+  .use( require( 'chai-as-promised' ) )
+  .use( require( 'dirty-chai' ) )
+  .expect;
 var sinon = require( 'sinon' );
+var sandbox = sinon.sandbox.create();
 var _ = require( 'lodash' );
 
 var dispatchr = require( 'dispatchr-module' );
@@ -19,6 +20,10 @@ function loadTestResource( resource ) {
 
 describe( 'pluginDispatchr', function() {
 
+  afterEach( function() {
+    sandbox.restore();
+  } );
+
   before( function( done ) {
     // Need to start up a server
     server = new Hapi.Server();
@@ -30,9 +35,8 @@ describe( 'pluginDispatchr', function() {
   } );
 
   describe( '#register', function() {
-    it( 'should allow us to access the plugin off the hapi server', function( done ) {
-      expect( server.plugins[ 'plugin-dispatchr' ] ).to.not.equal( undefined );
-      done();
+    it( 'should allow us to access the plugin off the hapi server', function() {
+      expect( server.plugins[ 'plugin-dispatchr' ] ).to.not.be.undefined();
     } );
   } );
 
@@ -50,13 +54,12 @@ describe( 'pluginDispatchr', function() {
       var checkType;
       var checkOptions;
 
-      before( function( done ) {
-        sinon.stub( dispatchr, 'publish', function( type, options, callback ) {
+      before( function() {
+        sandbox.stub( dispatchr, 'publish', function( type, options, callback ) {
           checkType = type;
           checkOptions = options;
           callback();
         } );
-        done();
       } );
 
       it( 'should be call dispatchr-module with the correct parameters and resolve', function() {
@@ -66,33 +69,21 @@ describe( 'pluginDispatchr', function() {
         } );
       } );
 
-      after( function( done ) {
-        dispatchr.publish.restore();
-        done();
-      } );
-
     } );
 
     context( 'Dispatchr module errorred', function() {
 
-      before( function( done ) {
-        sinon.stub( dispatchr, 'publish', function( type, options, callback ) {
+      before( function() {
+        sandbox.stub( dispatchr, 'publish', function( type, options, callback ) {
           callback( 'error ');
         } );
-        done();
       } );
 
       it( 'should pass back errors from dispatchr-module as a rejected promise', function() {
-        return expect( server.plugins[ 'plugin-dispatchr' ].publishEmail( loadTestResource( 'fixtures/validOptions' ) ) ).to.be.rejected;
-      } );
-
-      after( function( done ) {
-        dispatchr.publish.restore();
-        done();
+        return expect( server.plugins[ 'plugin-dispatchr' ].publishEmail( loadTestResource( 'fixtures/validOptions' ) ) ).to.be.rejected();
       } );
 
     } );
-
 
   } );
 
