@@ -1,10 +1,10 @@
 {
   "name": "plugin-dispatchr",
   "description": "A hapi plugin that wraps around around the dispatchr module to add email sends to the queue.",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "homepage": "https://github.com/holidayextras/plugin-dispatchr",
   "author": {
-    "name": "Shortbreaks",
+    "name": "Holiday Extras",
     "email": "shortbreaksdev@holidayextras.com"
   },
   "repository": {
@@ -20,17 +20,18 @@
     "test": "node_modules/deployment-helpers/nodeApps/preRelease.sh && node_modules/.bin/make-up lib test && istanbul cover _mocha -- --recursive test/ -R spec"
   },
   "devDependencies": {
-    "chai": "1.9.1",
-    "chai-as-promised": "4.3.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
     "deployment-helpers": "git+ssh://git@github.com:holidayextras/deployment-helpers.git",
+    "dirty-chai": "^1.2.2",
     "hapi": "6.0.2",
-    "istanbul": "0.3.7",
+    "istanbul": "^0.4.3",
     "make-up": "6.0.0",
-    "mocha": "1.20.1",
-    "sinon": "1.12.2"
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3"
   },
   "dependencies": {
-    "dispatchr-module": "git+ssh://git@github.com:holidayextras/dispatchr-module.git#v1.0.0",
+    "dispatchr-module": "git+ssh://git@github.com:holidayextras/dispatchr-module.git#v2.0.0",
     "lodash": "3.10.1",
     "q": "1.4.1"
   }

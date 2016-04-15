@@ -67,5 +67,5 @@ return request.server.plugins['plugin-dispatchr'].publishEmail( options );
 Code is linted checked against the style guide with [make-up](https://github.com/holidayextras/make-up), running npm test will run all tests required.
 
 ## License
-Copyright (c) 2015 Holiday Extras Ltd
+Copyright (c) 2016 Holiday Extras Ltd
 Licensed under the MIT license.
