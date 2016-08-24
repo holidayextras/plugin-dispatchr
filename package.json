@@ -1,7 +1,7 @@
 {
   "name": "plugin-dispatchr",
   "description": "A hapi plugin that wraps around around the dispatchr module to add email sends to the queue.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "homepage": "https://github.com/holidayextras/plugin-dispatchr",
   "author": {
     "name": "Holiday Extras",
@@ -31,7 +31,7 @@
     "sinon": "^1.17.3"
   },
   "dependencies": {
-    "dispatchr-module": "git+ssh://git@github.com:holidayextras/dispatchr-module.git#v2.0.0",
+    "dispatchr-module": "git+ssh://git@github.com:holidayextras/dispatchr-module.git#v3.0.4",
     "lodash": "3.10.1",
     "q": "1.4.1"
   }
