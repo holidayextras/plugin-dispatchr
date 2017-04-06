@@ -8,7 +8,7 @@ var sinon = require('sinon')
 var sandbox = sinon.sandbox.create()
 var _ = require('lodash')
 
-var dispatchr = require('dispatchr-module')
+var dispatchr = require('dispatchr-module').configure({})
 var Hapi = require('hapi')
 
 var server
