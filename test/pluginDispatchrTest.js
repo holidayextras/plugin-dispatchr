@@ -8,7 +8,10 @@ var sinon = require('sinon')
 var sandbox = sinon.sandbox.create()
 var _ = require('lodash')
 
-var dispatchr = require('dispatchr-module').configure({})
+var Logger = require('../lib/logger')
+var dispatchr = require('dispatchr-module').configure({
+  logger: new Logger()
+})
 var Hapi = require('hapi')
 
 var server
