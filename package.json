@@ -1,7 +1,7 @@
 {
   "name": "plugin-dispatchr",
   "description": "A hapi plugin that wraps around around the dispatchr module to add email sends to the queue.",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "homepage": "https://github.com/holidayextras/plugin-dispatchr",
   "author": {
     "name": "Holiday Extras",
@@ -14,25 +14,38 @@
   "license": "MIT",
   "main": "index",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">=6.9.4"
   },
   "scripts": {
-    "test": "node_modules/deployment-helpers/nodeApps/preRelease.sh && node_modules/.bin/make-up lib test && istanbul cover _mocha -- --recursive test/ -R spec"
+    "ci": "istanbul cover _mocha --  --timeout 15000 --recursive test/**/*Test.js -R xunit > $CIRCLE_TEST_REPORTS/unit/results.xml",
+    "lint": "standard",
+    "pretest": "node_modules/deployment-helpers/nodeApps/preRelease.sh",
+    "test": "npm run lint && npm run test:coverage",
+    "test:coverage": "istanbul cover _mocha -- --recursive test/ -R spec"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "chai-as-promised": "^5.3.0",
+    "chai-as-promised": "^6.0.0",
     "deployment-helpers": "git+ssh://git@github.com:holidayextras/deployment-helpers.git",
     "dirty-chai": "^1.2.2",
-    "hapi": "6.0.2",
-    "istanbul": "^0.4.3",
-    "make-up": "6.0.0",
-    "mocha": "^2.4.5",
-    "sinon": "^1.17.3"
+    "hapi": "16.1.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "sinon": "^2.1.0",
+    "standard": "^10.0.0"
   },
   "dependencies": {
-    "dispatchr-module": "git+ssh://git@github.com:holidayextras/dispatchr-module.git#v2.0.0",
-    "lodash": "3.10.1",
-    "q": "1.4.1"
+    "dispatchr-module": "git+ssh://git@github.com:holidayextras/dispatchr-module.git#v4.1.1",
+    "lodash": "4.17.4",
+    "q": "1.5.0"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "afterEach",
+      "before",
+      "it",
+      "context"
+    ]
   }
 }
