@@ -26,14 +26,12 @@ describe('pluginDispatchr', function () {
     sandbox.restore()
   })
 
-  before(function (done) {
+  before(async function () {
     // Need to start up a server
     server = new Hapi.Server()
 
     // and then register this plugin to that server
-    server.register(require('../lib/pluginDispatchr'), function () {
-      done()
-    })
+    await server.register(require('../lib/pluginDispatchr'))
   })
 
   describe('#register', function () {
