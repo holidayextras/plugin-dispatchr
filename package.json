@@ -39,6 +39,9 @@
     "lodash": "4.17.4",
     "q": "1.5.1"
   },
+  "peerDependencies": {
+    "hapi": "^17.x.x"
+  },
   "standard": {
     "globals": [
       "describe",
