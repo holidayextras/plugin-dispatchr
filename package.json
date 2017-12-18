@@ -21,7 +21,7 @@
     "lint": "standard",
     "pretest": "node_modules/deployment-helpers/nodeApps/preRelease.sh",
     "test": "npm run lint && npm run test:coverage",
-    "test:coverage": "istanbul cover _mocha -- --recursive test/ -R spec"
+    "test:coverage": "istanbul cover _mocha -- --recursive --exit test/ -R spec"
   },
   "devDependencies": {
     "chai": "^4.1.2",
