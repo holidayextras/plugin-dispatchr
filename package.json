@@ -28,7 +28,7 @@
     "chai-as-promised": "^7.1.1",
     "deployment-helpers": "git+ssh://git@github.com:holidayextras/deployment-helpers.git",
     "dirty-chai": "^2.0.1",
-    "hapi": "17.1.1",
+    "hapi": "17.x.x",
     "istanbul": "^0.4.5",
     "mocha": "^4.0.1",
     "sinon": "^4.1.3",
