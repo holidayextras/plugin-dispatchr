@@ -1,7 +1,7 @@
 {
   "name": "plugin-dispatchr",
   "description": "A hapi plugin that wraps around around the dispatchr module to add email sends to the queue.",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "homepage": "https://github.com/holidayextras/plugin-dispatchr",
   "author": {
     "name": "Holiday Extras",
@@ -17,12 +17,12 @@
     "node": ">=8.9.3"
   },
   "scripts": {
-    "ci": "istanbul cover _mocha --  --timeout 15000 --recursive --exit test/**/*Test.js -R xunit > $CIRCLE_TEST_REPORTS/unit/results.xml",
+    "ci": "echo 'nothing to do here'",
     "lint": "standard",
     "pretest": "node_modules/deployment-helpers/nodeApps/preRelease.sh",
     "test": "npm run lint && npm run test:coverage",
     "test:coverage": "istanbul cover _mocha -- --recursive --exit test/ -R spec",
-    "deploy": "exit 0"
+    "deploy": "./scripts/deploy.sh"
   },
   "devDependencies": {
     "chai": "^4.1.2",

@@ -1,7 +1,5 @@
 # plugin-dispatchr
 
-[![Circle CI](https://circleci.com/gh/holidayextras/plugin-dispatchr/tree/master.svg?style=svg&circle-token=4846db9d7b85bf5117c58f793183d639f8cc802b)](https://circleci.com/gh/holidayextras/plugin-dispatchr)
-
 ## About
 
 A [hapi](http://hapijs.com/) plugin that wraps around a call to Dispatchr service
