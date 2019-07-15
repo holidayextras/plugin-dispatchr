@@ -52,7 +52,7 @@
       "context"
     ]
   },
-  "owner": "sb-backoffice",
+  "owner": "sb-backend",
   "platform": "custom",
   "ci": "dockyard"
 }
