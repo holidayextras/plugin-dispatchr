@@ -52,7 +52,7 @@
       "context"
     ]
   },
-  "owner": "sb-backend",
+  "owner": "shortbreaks",
   "platform": "custom",
   "ci": "dockyard"
 }
